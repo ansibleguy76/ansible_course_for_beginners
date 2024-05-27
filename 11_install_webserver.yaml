@@ -29,12 +29,12 @@
 
     - name: Copy index test page
       template:
-        src: "files/index.html.j2"
+        src: "templates/index.html.j2"
         dest: "/var/www/{{ http_host }}/index.html"
 
     - name: Set up Apache virtuahHost
       template:
-        src: "files/apache.conf.j2"
+        src: "templates/apache.conf.j2"
         dest: "/etc/apache2/sites-available/{{ http_conf }}"
 
     - name: Enable new site
