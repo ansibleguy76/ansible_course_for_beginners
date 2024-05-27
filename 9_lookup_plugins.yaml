@@ -20,8 +20,8 @@
 
   - name: get template
     set_fact:
-      template_output: "{{ lookup('template', 'template.j2') }}"
+      family_summary: "{{ lookup('template', 'templates/family_summary.j2') }}"
 
   - name: debug template output
     debug:
-      var: template_output
+      var: family_summary
