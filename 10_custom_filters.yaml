@@ -17,3 +17,7 @@
     - name: title case a string
       debug:
         msg: "{{ 'foobar' | title_string }}"
+
+    - name: combine them
+      debug:
+        msg: "{{ 'hello' | suffix_string('world') | reverse_string | title_string }}"
