@@ -1,0 +1,6 @@
+---
+the_fathers: "{{ families | map(attribute='father') | list }}"
+the_mothers: "{{ families | map(attribute='mother') | list }}"
+the_children: "{{ families | map(attribute='children') | list | sum(start=[]) | map(attribute='name') | list }}"
+the_sum_of_the_age_of_the_children: "{{ families | map(attribute='children') | list | sum(start=[]) | map(attribute='age') | list | sum }}"
+
