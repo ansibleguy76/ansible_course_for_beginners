@@ -1,0 +1,12 @@
+---
+- name: debug families
+  hosts: localhost
+  vars_files:
+    - vars/families.yaml
+  tasks:
+    - name: debug families
+      debug:
+        var: 
+        
+    # or in a one-liner
+    - debug: var=families
