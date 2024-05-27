@@ -1,4 +1,5 @@
 ---
+app_user: root
 http_host: "families.local"
 http_conf: "families.local.conf"
 http_port: "8888"
