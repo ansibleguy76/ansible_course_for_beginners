@@ -1,0 +1,19 @@
+---
+# This playbook installs a package with default values for the package name and state.
+# you can run this playbook with the following command:
+# ansible-playbook -e name=hello -e state=present 5_install_package_with_default.yaml
+# or you can run this playbook without any extra variables:
+# ansible-playbook 5_install_package_with_default.yaml
+
+- name: install a package
+  hosts: localhost
+  tasks:
+    - name: set package name and state with defaults
+      set_fact:
+        package_name: "{{ name | default('hello') }}"
+        package_state: "{{ state | default('present') }}"
+    - name: install a package
+      apt:
+        pkg: "{{ package_name }}"
+        state: "{{ package_state }}"
+      
