@@ -1,0 +1,13 @@
+---
+- name: install a package
+  hosts: localhost
+  vars_prompt:
+    - name: package_name
+      prompt: "Enter the package name"
+    - name: package_state
+      prompt: "Enter the package state"
+  tasks:
+    - name: install a package
+      apt:
+        pkg: "{{ package_name }}"
+        state: "{{ package_state }}"
