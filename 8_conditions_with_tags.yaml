@@ -1,0 +1,32 @@
+---
+- name: a playbook with multiple tasks that run based on tags
+  hosts: localhost
+  tasks:
+    - name: debug something
+      debug:
+        msg: Hello, world!
+      tags:
+        - debug
+    - name: debug families
+      debug:
+        var: families
+      tags:
+        - debug
+    - name: set package name and state with defaults
+      set_fact:
+        package_name: "{{ name | default('hello') }}"
+        package_state: "{{ state | default('present') }}"
+      tags:
+        - set_fact
+    - name: install a package
+      apt:
+        pkg: "{{ package_name }}"
+        state: "{{ package_state }}"
+      tags:
+        - install
+
+    - name: a task that always runs
+      debug:
+        msg: This task always runs
+      tags:
+        - always
