@@ -1,0 +1,27 @@
+---
+- name: example of several lookup plugins (set_fact and debug)
+  hosts: localhost
+  tasks:
+  - name: set_fact with lookup
+    set_fact:
+      lipsum: "{{ lookup('file', 'lipsum.txt').split('\n') }}"
+
+  - name: debug lipsum
+    debug:
+      var: lipsum
+
+  - name: set_fact with lookup env home
+    set_fact:
+      home: "{{ lookup('env', 'HOME') }}"
+
+  - name: debug home
+    debug:
+      var: home
+
+  - name: get template
+    set_fact:
+      template_output: "{{ lookup('template', 'template.j2') }}"
+
+  - name: debug template output
+    debug:
+      var: template_output
