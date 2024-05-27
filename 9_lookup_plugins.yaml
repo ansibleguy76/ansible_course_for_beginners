@@ -4,7 +4,7 @@
   tasks:
   - name: set_fact with lookup
     set_fact:
-      lipsum: "{{ lookup('file', 'lipsum.txt').split('\n') }}"
+      lipsum: "{{ lookup('file', 'files/lipsum.txt').split('\n') }}"
 
   - name: debug lipsum
     debug:
