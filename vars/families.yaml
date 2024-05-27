@@ -1,0 +1,25 @@
+---
+families:
+- father: John
+  mother: Jane
+  children:
+    - name: Jimmy
+      age: 12
+    - name: Jenny
+      age: 10
+- father: Jack
+  mother: Jill
+  children:
+    - name: Jacky
+      age: 8
+    - name: Jillian
+      age: 6
+- father: John
+  mother: Joan
+  children:
+    - name: Joey
+      age: 4
+    - name: Joanne
+      age: 2
+    - name: Jodie
+      age: 1
