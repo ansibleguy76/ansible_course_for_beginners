@@ -1,6 +1,6 @@
 # ansible-playbook -t set_fact -t install 8_conditions_with_tags.yaml
 # ansible-playbook -t debug 8_conditions_with_tags.yaml
-ansible-playbook 8_conditions_with_tags.yaml
+# ansible-playbook 8_conditions_with_tags.yaml
 
 ---
 - name: a playbook with multiple tasks that run based on tags
