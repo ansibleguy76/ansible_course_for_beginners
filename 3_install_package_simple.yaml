@@ -1,0 +1,8 @@
+---
+- name: install a package
+  hosts: localhost
+  tasks:
+    - name: install a package
+      apt:
+        pgk: hello
+        state: present
