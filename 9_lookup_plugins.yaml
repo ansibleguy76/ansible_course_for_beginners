@@ -1,6 +1,8 @@
 ---
 - name: example of several lookup plugins (set_fact and debug)
   hosts: localhost
+  vars_files:
+  - vars/families.yaml
   tasks:
   - name: set_fact with lookup
     set_fact:
