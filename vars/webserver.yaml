@@ -1,6 +1,6 @@
 ---
 app_user: root
 http_host: "families.local"
-http_conf: "families.local.conf"
+http_conf: "families.conf"
 http_port: "80"
 disable_default: true    
