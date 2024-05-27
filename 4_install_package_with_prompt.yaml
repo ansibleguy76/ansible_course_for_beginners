@@ -4,8 +4,10 @@
   vars_prompt:
     - name: package_name
       prompt: "Enter the package name"
+      private: no
     - name: package_state
       prompt: "Enter the package state"
+      private: no
   tasks:
     - name: install a package
       apt:
