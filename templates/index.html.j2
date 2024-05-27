@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Family Data</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Father</th>
+            <th>Mother</th>
+            <th>Children</th>
+        </tr>
+        {% for family in families %}
+        <tr>
+            <td>{{ family.father }}</td>
+            <td>{{ family.mother }}</td>
+            <td>
+                <table border="1">
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                    {% for child in family.children %}
+                    <tr>
+                        <td>{{ child.name }}</td>
+                        <td>{{ child.age }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
