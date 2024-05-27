@@ -1,0 +1,12 @@
+---
+- name: my first debug playbook
+  hosts: localhost
+  tasks:
+
+    # this is a task that prints a message
+    - name: debug something
+      debug:
+        msg: Hello, world!
+
+    # you can do this in a one-liner
+    - debug: msg="Hello, world!"
