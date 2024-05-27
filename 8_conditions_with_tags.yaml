@@ -1,6 +1,8 @@
 ---
 - name: a playbook with multiple tasks that run based on tags
   hosts: localhost
+  vars_files:
+  - vars/families.yaml
   tasks:
     - name: debug something
       debug:
