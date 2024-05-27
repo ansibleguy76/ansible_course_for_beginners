@@ -1,0 +1,44 @@
+---
+- name: print only John's family
+  hosts: localhost
+  vars_files:
+    - vars/families.yaml
+
+  vars:
+    an_undefined_variable: 
+    a_defined_variable: "I am defined"
+  tasks:
+    - name: print only John's family
+      debug:
+        var: item
+
+      # only print the item when the condition is true
+      when: item.father == 'John'
+
+      # loop over the families
+      with_items: "{{ families }}"
+
+      # loop control is optional but can be useful
+      loop_control:
+        label: "{{ item.father }}'s family has {{ item.children | length }} children"
+
+    - name: print when a variable is defined
+      debug:
+        msg: "I am defined"
+      when: a_defined_variable is defined
+
+    - name: print when a variable is not defined
+      debug:
+        msg: "I am not defined"
+      when: an_undefined_variable is not defined
+
+    # now lets reverse the last two tasks
+    - name: skip when a variable is not defined
+      debug:
+        msg: "I am not defined"
+      when: a_defined_variable is not defined
+
+    - name: skip when a variable is defined
+      debug:
+        msg: "I am defined"
+      when: an_undefined_variable is defined
