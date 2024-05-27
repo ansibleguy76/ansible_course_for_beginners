@@ -4,5 +4,5 @@
   tasks:
     - name: install a package
       apt:
-        pgk: hello
+        pkg: hello
         state: present
