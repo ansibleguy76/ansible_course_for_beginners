@@ -1,0 +1,19 @@
+---
+- name: install a package
+  hosts: localhost
+  vars: 
+    package_name: hello
+    package_state: present
+  tasks:
+    - name: install a package
+      apt:
+        pkg: "{{ package_name }}"
+        state: "{{ package_state }}"
+
+      # notice that we are registering the result of the task
+      register: result
+
+    - name: show the result
+      debug:
+        var: result
+      
