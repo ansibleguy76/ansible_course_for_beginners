@@ -1,0 +1,19 @@
+---
+- name: play with custom filters
+  hosts: localhost
+  tasks:
+    - name: prexix a string
+      debug:
+        msg: "{{ 'hello' | prefix_string('world') }}"
+
+    - name: suffix a string
+      debug:
+        msg: "{{ 'hello' | suffix_string('world') }}"
+
+    - name: reverse a string
+      debug:
+        msg: "{{ 'hello' | reverse_string }}"
+
+    - name: title case a string
+      debug:
+        msg: "{{ 'foobar' | title_string }}"
