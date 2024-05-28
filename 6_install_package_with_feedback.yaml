@@ -1,4 +1,6 @@
 ---
+# are you interested what happened when the installation ran
+# use the property "register" on a task to register the result of the task.
 - name: install a package
   hosts: localhost
   vars: 

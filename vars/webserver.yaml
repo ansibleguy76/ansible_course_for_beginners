@@ -3,4 +3,4 @@ app_user: root
 http_host: "families.local"
 http_conf: "families.conf"
 http_port: "80"
-disable_default: true    
+disable_default: true    # will disable the default apache demo website

@@ -1,6 +1,10 @@
 ---
+# a great ansible example is installing software on a target host
+# here we still use localhost
+# the "hello" package is simple helloworld package that will install the executable "hello" which prints a helloworld message.
 - name: install a package
   hosts: localhost
+#  become: true # become would run with sudo, enable if you are not root
   tasks:
     - name: install a package
       apt:

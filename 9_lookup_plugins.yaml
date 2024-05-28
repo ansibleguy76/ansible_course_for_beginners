@@ -1,9 +1,13 @@
 ---
+# sometime we want to lookup some information
+# the lookup plugin is great for this.
+# here are a few examples
 - name: example of several lookup plugins (set_fact and debug)
   hosts: localhost
   vars_files:
   - vars/families.yaml
   tasks:
+  # let's lookup a text file
   - name: set_fact with lookup
     set_fact:
       lipsum: "{{ lookup('file', 'files/lipsum.txt').split('\n') }}"
@@ -12,6 +16,7 @@
     debug:
       var: lipsum
 
+  # let's lookup an environment variable
   - name: set_fact with lookup env home
     set_fact:
       home: "{{ lookup('env', 'HOME') }}"
@@ -20,6 +25,7 @@
     debug:
       var: home
 
+  # let's process a template and store the result
   - name: get template
     set_fact:
       family_summary: "{{ lookup('template', 'templates/family_summary.j2') }}"

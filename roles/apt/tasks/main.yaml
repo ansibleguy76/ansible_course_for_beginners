@@ -1,0 +1,9 @@
+# this main.yaml will be proxy file to start another yaml
+# based on the variable qtask.
+# as an example is also pickup the qpackage variable and pass it to "package".
+# it's just a potential way of passing variables to a role.
+# it also allow to pickup a default value, in this example "hello" package
+
+- include_tasks: "{{ qtask }}.yaml"
+  vars:
+    package: "{{ qpackage | default('hello') }}"

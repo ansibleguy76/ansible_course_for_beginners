@@ -1,4 +1,7 @@
 ---
+# let's ask the operator for the package name and whether
+# or not we want to install or uninstall it (state = present|absent)
+
 - name: install a package
   hosts: localhost
   vars_prompt:

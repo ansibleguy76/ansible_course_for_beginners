@@ -1,4 +1,14 @@
 ---
+# let's make a more real-life playbook
+# This playbook will :
+# - install apache and prerequisites
+# - configure a new website root-folder
+# - copy an index.html file, processed from a template
+# - copy a config file, processed from a template
+# - enable the the new website
+# - disable the default apache website
+# - make firewall whole of the web-port
+# - apply a few handlers to restart/reload apache
 - name: install a simple webserver on an ubuntu and copy 1 html file based on jinja j2 template
   hosts: localhost
   vars_files:

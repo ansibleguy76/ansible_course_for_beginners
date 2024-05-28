@@ -1,0 +1,13 @@
+# let's play with roles
+# in our root-folder, we have subfolder "roles"
+# we can run 1 or more roles, with the "roles" property
+#
+# as "way of working", i genarally use the main.yaml in the /tasks folder
+# as proxy to run a certain role-part, and use the qtask variable (is a random chosen varialbe name)
+# to define which part to run.
+# the qtask "install" will trigger /roles/apt/tasks/install.yaml
+# additionally we pass the qpackage variable that is mapped in main.yaml
+- name: test roles
+  hosts: localhost
+  roles:
+  - { role: apt, qtask: install, qpackage: hello }

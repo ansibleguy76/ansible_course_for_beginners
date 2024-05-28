@@ -1,0 +1,21 @@
+---
+# we make a group "ubuntu" which will contain our ubuntu containers
+# use the https://github.com/ansibleguy76/ubuntu_ansible_docker_compose repo
+# to deploy multiple ubuntu containers
+# HOWTO :
+# the whole idea is that you have a single ubuntu machine, where we will spinup multiple ubuntu containers
+# register your host ubuntu ip-address, you will need it later
+ubuntu:
+  # group level vars
+  vars:
+      ansible_become_pass: Ansible12!  # required for sudo
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no' # bypass ssh fingerprint interaction
+      ansible_host: 172.22.139.250 # adjust with you ubuntu host ip
+      ansible_user: ansible
+      ansible_ssh_pass: Ansible12!
+  hosts:
+    ubuntu1:
+      ansible_port: 2201
+    ubuntu2:
+      ansible_port: 2202
+    # ... add more

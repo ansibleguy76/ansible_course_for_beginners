@@ -1,0 +1,11 @@
+---
+# if the previous playbook was success
+# then see if we can install a package
+- name: install a package
+  hosts: ubuntu # will run on multipl ubuntu hosts (see inventory.yaml)
+  become: true # is now required, we connect with user "ansible"
+  tasks:
+    - name: install a package
+      apt:
+        pkg: hello
+        state: present

@@ -1,5 +1,13 @@
 ---
-- name: play with custom filters
+# by now you realize that the "|" pipe character
+# is used to further process the proceeding result
+# you can loop items, filteritems, exclude properties, include, regex, ...
+# there are whole websites dedicated on jinja filters and plugins
+
+# but sometimes it's just too complex to do it with the builtin filters
+# so let's write our own (see the filter_plugins folder).
+
+- name: play with custom filters 
   hosts: localhost
   tasks:
     - name: prexix a string

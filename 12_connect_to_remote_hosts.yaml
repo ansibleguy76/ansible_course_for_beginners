@@ -1,0 +1,18 @@
+---
+# until now, we kept targeting the localhost
+# but we can also target remote hosts
+# you should have spun up one or more ubuntu's using docker and dockercompose
+# and you should have corrected the inventory.yaml file so that we can properly
+# connect to those containers
+# 
+# you can test the connection with the ping module.
+# the ansible.cfg contains the location of the inventory file
+# so simply run : ansible-playbook 12_connect_to_remote_hosts.yaml
+# if you want to see the "pong" result, run in verbose mode
+# run : ansible-playbook 12_connect_to_remote_hosts.yaml -v
+- name: Test inventory connections
+  hosts: ubuntu
+  gather_facts: no
+  tasks:
+  - ping:
+  

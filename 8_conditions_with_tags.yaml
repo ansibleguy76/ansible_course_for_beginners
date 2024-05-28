@@ -1,3 +1,7 @@
+# tasks can also be skipped (or not) with what we call "tags".
+# depending on the tags we pass, some tasks will be run, others not
+# be carefull with tags, it doesn't always work as you think it will.
+
 # ansible-playbook -t set_fact -t install 8_conditions_with_tags.yaml
 # ansible-playbook -t debug 8_conditions_with_tags.yaml
 # ansible-playbook 8_conditions_with_tags.yaml

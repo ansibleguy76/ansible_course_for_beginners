@@ -1,0 +1,5 @@
+- debug: 
+    msg: "Uninstalling package {{ package }}"
+- apg:
+    pkg: "{{ package }}"
+    state: absent

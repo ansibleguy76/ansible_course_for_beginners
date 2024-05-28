@@ -1,4 +1,7 @@
 ---
+# can you conditionally run a task ?  
+# of course, let's throw in a loop and only print
+# the family if the father is named "john"
 - name: print only John's family
   hosts: localhost
   vars_files:
@@ -10,7 +13,7 @@
   tasks:
     - name: print only John's family
       debug:
-        var: item
+        var: family
 
       # only print the item when the condition is true
       when: item.father == 'John'
@@ -20,19 +23,22 @@
 
       # loop control is optional but can be useful
       loop_control:
-        label: "{{ item.father }}'s family has {{ item.children | length }} children"
+        loop_variable: family
+        label: "{{ family.father }}'s family has {{ family.children | length }} children"
 
+    # can we put a condition if a variable contains a value ? (is defined)
     - name: print when a variable is defined
       debug:
         msg: "I am defined"
       when: a_defined_variable is defined
 
+    # can we do this if it does not contain a value ? (undefined / or null)
     - name: print when a variable is not defined
       debug:
         msg: "I am not defined"
       when: an_undefined_variable is not defined
 
-    # now lets reverse the last two tasks
+    # now lets inverse the last two tasks logically
     - name: skip when a variable is not defined
       debug:
         msg: "I am not defined"

@@ -1,4 +1,5 @@
 ---
+# A module you will use a lot is "debug - msg"
 - name: my first debug playbook
   hosts: localhost
   tasks:
